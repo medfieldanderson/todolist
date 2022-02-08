@@ -10,11 +10,11 @@ const _ = require("lodash");
 require("dotenv").config();
 
 const app = express();
-
 app.set('view engine', 'ejs');
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+const PORT = 3000;
 
 const pwd = process.env.MONGODB_PASSWORD;
 
@@ -229,7 +229,7 @@ app.post("/delete", (req, res) => {
   }
 });
 
-
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+const thePort = process.env.PORT || PORT;
+app.listen(thePort || PORT, () => {
+  console.log(`Server started on port ${thePort}`);
 });
