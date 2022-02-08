@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const PORT = 3000;
+const _port = 3000;
 
 const pwd = process.env.MONGODB_PASSWORD;
 
@@ -228,7 +228,7 @@ app.post("/delete", (req, res) => {
     );
   }
 });
-
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+const portToUse = process.env.PORT || _port;
+app.listen(`${portToUse}`, () => {
+  console.log(`Server started on port ${portToUse}`);
 });
