@@ -19,7 +19,7 @@ const PORT = 3000;
 const pwd = process.env.MONGODB_PASSWORD;
 
 // mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true});
-mongoose.connect(`mongodb+srv://admin-jeff:FatDog1006@cluster0.uyyzc.mongodb.net/todolistDB`, {
+mongoose.connect(`mongodb+srv://admin-jeff:${pwd}@cluster0.uyyzc.mongodb.net/todolistDB`, {
   useNewUrlParser: true
 });
 
