@@ -229,7 +229,6 @@ app.post("/delete", (req, res) => {
   }
 });
 
-const thePort = process.env.PORT || PORT;
-app.listen(thePort || PORT, () => {
-  console.log(`Server started on port ${thePort}`);
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
