@@ -1,5 +1,19 @@
 <%- include("header") -%>
-<div class="menu">
+<nav class="navbar">
+  <a class="navbar-item" href="/">Today</a>
+  <div class="dropdown">
+    <button class="dropdown-button" type="button">
+      ☰
+      <!-- <i class="fa fa-caret-down"></i> -->
+    </button>
+    <div class="dropdown-content">
+      <% menuItems.forEach((item) => { %>
+      <a class="navbar-item" href="/<%= item.name %>"><%= item.name %></a>
+      <% }); %>
+    </div>
+  </div>
+</nav>
+<!-- <div class="menu">
   <div class="listMenu">
     <div class="listMenuItem">
       <a href="/">Today</a>
@@ -10,7 +24,7 @@
       </div>
     <% }); %>
   </div>
-</div>
+</div> -->
 <div>
   <div class="box" id="heading">
     <h1> <%= listTitle %> </h1>
@@ -28,7 +42,7 @@
     <% }) %>
     <form class="item" action="/" method="post">
       <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus>
-      <button type="submit" name="list" value="<%= listTitle %>">+</button>
+      <button class="add-button" type="submit" name="list" value="<%= listTitle %>">+</button>
     </form>
   </div>
 </div>

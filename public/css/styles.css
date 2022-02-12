@@ -1,33 +1,44 @@
+:root {
+  --bg-color-primary: #364968;
+  --bg-color-opposite: #FDDF97;
+  --bg-color-secondary: #E09664;
+  --bg-color-title: #FDDF97;
+  --bg-color-input: white;
+  --fg-color-text: #6C4343;
+  --shadow-color: #dddddd;
+}
+
 html {
-  background-color: #E4E9FD;
-  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+  background-image: -webkit-linear-gradient(65deg, var(--bg-color-secondary) 50%, #E4E9FD 50%);
+  background-image: linear-gradient(to bottom right, var(--bg-color-primary), var(--bg-color-opposite));
   min-height: 1000px;
   font-family: 'helvetica neue';
 }
 
 h1 {
-  color: #fff;
+  color: var(--bg-color-title);
   padding: 10px;
 }
 
 .box {
   max-width: 400px;
   margin: 50px auto;
-  background: white;
+  background: var(--bg-color-input);
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 #heading {
-  background-color: #A683E3;
+  background-color: var(--bg-color-primary);
   text-align: center;
 }
 
 .item {
-  min-height: 70px;
+  font-family: 'Patrick Hand', cursive;
+  min-height: 3rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #F1F1F1;
+  border-bottom: 1px solid var(--bg-color-opposite);
 }
 
 .item:last-child {
@@ -36,7 +47,7 @@ h1 {
 
 input:checked+p {
   text-decoration: line-through;
-  text-decoration-color: #A683E3;
+  text-decoration-color: var(--bg-color-primary);
 }
 
 input[type="checkbox"] {
@@ -45,10 +56,10 @@ input[type="checkbox"] {
 
 p {
   margin: 0;
-  padding: 20px;
-  font-size: 20px;
+  padding: 10px;
+  font-size: 1.25rem;
   font-weight: 200;
-  color: #00204a;
+  color: var(--fg-color-text);
 }
 
 form.item {
@@ -56,13 +67,13 @@ form.item {
   margin-left: 20px;
 }
 
-button {
+.add-button {
   min-height: 50px;
   width: 50px;
-  border-radius: 50%;
+  border-radius: 10%;
   border-color: transparent;
-  background-color: #A683E3;
-  color: #fff;
+  background-color: var(--bg-color-primary);
+  color: var(--bg-color-input);
   font-size: 30px;
   padding-bottom: 6px;
   border-width: 0;
@@ -70,18 +81,23 @@ button {
 
 input[type="text"] {
   text-align: center;
-  height: 60px;
+  height: 3rem;
   top: 10px;
   border: none;
   background: transparent;
   font-size: 20px;
   font-weight: 200;
   width: 313px;
+  font-family: 'Patrick Hand', cursive;
 }
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #A683E3;
+  box-shadow: inset 0 -3px 0 0 var(--bg-color-primary);
+}
+/* change .add-button behavior when input text gets focus */
+input[type="text"]:focus + .add-button {
+  border-radius:  10% 10% 0 0;
 }
 
 ::placeholder {
@@ -89,34 +105,60 @@ input[type="text"]:focus {
   opacity: 1;
 }
 
-.menu {
-  position: absolute;
-  /* display: flex; */
+.navbar {
+  overflow: hidden;
+  background-color: var(--bg-color-primary);
 }
-.listMenu {
-  position: sticky;
-  display: flex;
-  flex-direction:column;
-  background-color: #A683E3;
-  border: 2px solid #F1F1F1;
-  -webkit-box-shadow: 5px 5px 15px -5px #A683E3;
-  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+.navbar-item {
+  float: left;
+  font-size: 2rem;
+  color: var(--bg-color-input);
+  text-align: right;
+  padding: 1rem;
+  text-decoration: none;
 }
-.listMenuItem {
-  /* position: sticky; */
-  top: 0;
-  justify-content: space-between;
-  margin: .5rem;
-  padding: .25rem 1rem;
-  border: 2px solid #A683E3;
-  border-radius: 10px;
-  font-size: 1rem;
-  background-color: #F1F1F1;
-  /* flex: 1 1 1rem; */
+.navbar-item:hover {
+  color: var(--fg-color-text);
+  background-color: var(--bg-color-secondary);
+}
+.navbar-item:hover + .dropdown {
+  padding-bottom: -1px;
+  border-bottom: solid 1px var(--bg-color-title);
+}
+.dropdown {
+  float: right;
+  overflow: hidden;
+  font-size: 2rem;
+}
+.dropdown .dropdown-button {
+  font-size: inherit;
+  border: none;
+  outline: none;
+  color: var(--bg-color-input);
+  padding: 1rem;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
+.dropdown:hover {
+  background-color: var(--bg-color-primary);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: .5rem;
+  min-width: 10rem;
+  box-shadow: 0 .5rem 1rem 0 rbga(0,0,0,0.2);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: var(--bg-color-secondary);
+}
+
+
 footer {
-  color: white;
+  color: var(--bg-color-input);
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
