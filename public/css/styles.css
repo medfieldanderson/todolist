@@ -9,7 +9,7 @@
 }
 
 html {
-  background-image: -webkit-linear-gradient(65deg, var(--bg-color-secondary) 50%, #E4E9FD 50%);
+  /* background-image: -webkit-linear-gradient(65deg, var(--bg-color-secondary) 50%, #E4E9FD 50%); */
   background-image: linear-gradient(to bottom right, var(--bg-color-primary), var(--bg-color-opposite));
   min-height: 1000px;
   font-family: 'helvetica neue';
@@ -156,9 +156,31 @@ input[type="text"]:focus + .add-button {
   background-color: var(--bg-color-secondary);
 }
 
-
 footer {
   color: var(--bg-color-input);
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+
+/* 0 to 640
+ 641 to 1007
+ 1008 */
+ @media screen and (min-width: 1007px) {
+   html{
+          /* background-image: purple; */
+          background-image: linear-gradient(to bottom right, purple, pink); */
+   }
+   .item > p {
+     font-size: 1.5rem;
+   }
+ }
+ @media screen and (max-width: 640px) {
+   html {
+
+     background-image: linear-gradient(to bottom right, blue, green); */
+
+   }
+   .item > p {
+     font-size: 2rem;
+   }
+ }
