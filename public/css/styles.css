@@ -129,13 +129,13 @@ input[type="text"]:focus + .add-button {
   float: right;
   overflow: hidden;
   font-size: 2rem;
+  padding: 1rem;
 }
 .dropdown .dropdown-button {
   font-size: inherit;
   border: none;
   outline: none;
   color: var(--bg-color-input);
-  padding: 1rem;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -143,6 +143,10 @@ input[type="text"]:focus + .add-button {
 
 .dropdown:hover {
   background-color: var(--bg-color-primary);
+}
+
+.dropdown-button {
+  padding-right: 1.5rem;
 }
 .dropdown-content {
   display: none;
@@ -169,9 +173,9 @@ footer {
    html{
           /* background-image: purple; */
           background-image: linear-gradient(to bottom right, purple, pink); */
-   }
-   .item > p {
-     font-size: 1.5rem;
+          .item > p {
+            font-size: 3rem;
+          }
    }
  }
  @media screen and (max-width: 640px) {
@@ -180,7 +184,10 @@ footer {
      background-image: linear-gradient(to bottom right, blue, green); */
 
    }
-   .item > p {
-     font-size: 2rem;
-   }
+     .navbar-item .dropdown-button {
+       font-size: 4rem;
+     }
+     .item > p {
+       font-size: 2rem;
+     }
  }
