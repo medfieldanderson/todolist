@@ -2,7 +2,7 @@
 const _ = require("lodash");
 
 exports.capitalize = (expression) => {
-  console.log(`hString.CAPITALIZED INCOMING: ${expression}`);
+  console.log(`stringHelper.CAPITALIZED INCOMING: ${expression}`);
   const words = expression.split(" ");
 
   // capitalize each word in expression
@@ -12,6 +12,6 @@ exports.capitalize = (expression) => {
 
 
   const capitalizedExpression = capitalized.join(" ");
-  console.log(`hString.CAPITALIZED OUTGOING: ${capitalizedExpression}`);
+  console.log(`stringHelper.CAPITALIZED OUTGOING: ${capitalizedExpression}`);
   return capitalizedExpression;
 };
