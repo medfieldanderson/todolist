@@ -183,9 +183,8 @@ app.post(
     const itemName = req.body.newItem;
     const listName = req.body.list;
 
-    const urlDest = (listName === "Today" ? "/" : `/${listName}`)
+    const urlDest = listName === "Today" ? "/" : `/${listName}`;
     if (err.isEmpty()) {
-
       const item = new Item({
         name: itemName,
       });
